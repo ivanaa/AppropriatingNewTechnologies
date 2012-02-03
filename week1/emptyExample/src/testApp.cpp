@@ -19,9 +19,9 @@ void testApp::setup(){
 //    vidGrabber.setVerbose(true);
 //    vidGrabber.initGrabber(w,h);
 //    colorImg.allocate(w,h);
-   
-    head.loadImage("2.png");
-    head.resize(200, 200);
+  
+    head.loadImage("v.png");
+    head.resize(500, 500);
 
     
     
@@ -41,7 +41,7 @@ void testApp::setup(){
     colorFace.allocate(w,h,OF_IMAGE_COLOR);
     
 	bLearnBakground = true;
-	threshold = 80;
+	threshold = 10;
 
     haarFinder.setup("haarXML/haarcascade_frontalface_default.xml");
 
@@ -145,27 +145,27 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    ofSetHexColor(0xffffff);
+   // ofSetHexColor(0xffffff);
 
     grayImage.draw(0,0);
 
     
 //	colorImgOf.draw(20,20)
 //    ofFill();
-	ofSetColor(255,0,0);
+	//ofSetColor(255,0,0);
 
 //    colorFace.draw(20,0);
 
 	 //  ofNoFill();
-	ofSetColor(0x333333);
+	//ofSetColor(0x333333);
     for (int i = 0; i < haarFinder.blobs.size(); i++){
-        haarFinder.blobs[i].draw(0,0);
+        //haarFinder.blobs[i].draw(0,0);
         ofRectangle cur = haarFinder.blobs[i].boundingRect;
         
         
-        
-        head.draw(cur.x,cur.y);
-       
+        ofEnableAlphaBlending();
+        head.draw(cur.x-30,cur.y-30,cur.width+70, cur.height+100);
+       ofDisableAlphaBlending();
     }
 
     
