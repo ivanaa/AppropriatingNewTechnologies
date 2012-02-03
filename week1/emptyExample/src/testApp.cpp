@@ -160,7 +160,11 @@ void testApp::draw(){
 	ofSetColor(0x333333);
     for (int i = 0; i < haarFinder.blobs.size(); i++){
         haarFinder.blobs[i].draw(0,0);
-        head.draw(0,0);
+        ofRectangle cur = haarFinder.blobs[i].boundingRect;
+        
+        
+        
+        head.draw(cur.x,cur.y);
        
     }
 
