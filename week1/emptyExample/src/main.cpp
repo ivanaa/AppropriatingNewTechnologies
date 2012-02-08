@@ -14,3 +14,10 @@ int main( ){
 	ofRunApp( new testApp());
 
 }
+
+
+
+
+
+
+ofImage.invert().
