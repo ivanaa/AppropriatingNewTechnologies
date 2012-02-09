@@ -82,6 +82,7 @@ void testApp::loadFace(string face){
 	if(src.getWidth() > 0) {
 		srcTracker.update(toCv(src));
 		srcPoints = srcTracker.getImagePoints();
+        
 	}
 }
 

@@ -16,6 +16,12 @@ public:
 	
 	ofVideoGrabber cam;
 	ofxFaceTracker tracker;
+    ofxFaceTracker srcTracker; 
+    ofImage src;
+	vector<ofVec2f> srcPoints;
+
+    
+    
 	ofVec2f position;
 	float scale;
 	ofVec3f orientation;

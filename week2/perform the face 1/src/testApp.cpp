@@ -9,16 +9,24 @@ void testApp::setup() {
 	cam.initGrabber(640, 480);
 	
 	tracker.setup();
+    srcTracker.setup();
 }
 
 void testApp::update() {
 	cam.update();
 	if(cam.isFrameNew()) {
 		tracker.update(toCv(cam));
+        srcTracker.update(toCv(cam));
+        
+        
 		position = tracker.getPosition();
 		scale = tracker.getScale();
 		orientation = tracker.getOrientation();
 		rotationMatrix = tracker.getRotationMatrix();
+        
+        
+        
+		srcPoints = srcTracker.getImagePoints();
 	}
 }
 
@@ -31,8 +39,10 @@ void testApp::draw() {
 		ofSetLineWidth(0);
 		//tracker.draw();
     
-        ofMesh objectMesh = tracker.getObjectMesh();
-		//ofMesh meanMesh = tracker.getMeanObjectMesh();
+       // ofMesh objectMesh = tracker.getObjectMesh();
+ofMesh meanMesh = tracker.getMeanObjectMesh();
+        meanMesh.clearTexCoords();
+        meanMesh.addTexCoords(srcPoints);
 
         
         
@@ -46,7 +56,7 @@ void testApp::draw() {
         
         cam.getTextureReference().bind();
         //camMesh.draw();
-        objectMesh.draw();
+        meanMesh.draw();
         cam.getTextureReference().unbind();
 
 		//tracker.getObjectMesh().drawWireframe();
