@@ -20,4 +20,3 @@ int main( ){
 
 
 
-ofImage.invert().

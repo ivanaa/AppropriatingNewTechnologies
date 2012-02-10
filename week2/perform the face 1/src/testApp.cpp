@@ -10,6 +10,8 @@ void testApp::setup() {
 	
 	tracker.setup();
     srcTracker.setup();
+    
+    bitesFbo.allocate(640,480, GL_RGBA);
 }
 
 void testApp::update() {
@@ -38,14 +40,29 @@ void testApp::draw() {
 	if(tracker.getFound()) {
 		ofSetLineWidth(0);
 		//tracker.draw();
+        
+        
+    //ofPolyline mouthLine = tracker.getImageFeature(ofxFaceTracker::INNER_MOUTH);
+        
+       // bitesFbo.begin();
+        //ofClear(255,0);
+
+    /*    ofPushStyle();
+        ofSetColor(0);
+        ofFill();
+        mouthLine.draw();
+        ofPopStyle();
+        bitesFbo.end();
+        
+      */  
     
        // ofMesh objectMesh = tracker.getObjectMesh();
-ofMesh meanMesh = tracker.getMeanObjectMesh();
+       ofMesh meanMesh = tracker.getMeanObjectMesh();
         meanMesh.clearTexCoords();
         meanMesh.addTexCoords(srcPoints);
 
         
-        
+     //   ofPushMatrix();
 		//easyCam.begin();
 		ofSetupScreenOrtho(640, 480, OF_ORIENTATION_UNKNOWN, true, -1000, 1000);
 	    ofTranslate(position);
@@ -53,12 +70,19 @@ ofMesh meanMesh = tracker.getMeanObjectMesh();
 		ofScale(scale,scale,scale);
 		//ofDrawAxis(scale);
         
+    
         
         cam.getTextureReference().bind();
         //camMesh.draw();
         meanMesh.draw();
+        ofPolyline mouthLine = tracker.getImageFeature(ofxFaceTracker::INNER_MOUTH);
+        ofColor(255);
+        ofFill();
+        mouthLine.draw();
         cam.getTextureReference().unbind();
-
+     //   ofPopMatrix();
+        
+      //  bitesFbo.draw(0,0);
 		//tracker.getObjectMesh().drawWireframe();
 		//easyCam.end();
 	}
