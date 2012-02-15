@@ -10,7 +10,7 @@ void ofApp::setup() {
 	aperture = .2;
 	
 	ofImage img;
-	img.loadImage("linzer.png");
+	img.loadImage("1.png");
 	mesh.setMode(OF_PRIMITIVE_POINTS);
 	for(int y = 0; y < img.getHeight(); y++) {
 		for(int x = 0; x < img.getWidth(); x++) {
@@ -49,8 +49,8 @@ void ofApp::draw() {
 	
 	// need to re-flip because FBOs are were upside down
 	// this feels like a bug, not sure why we have to do this.
-	ofTranslate(0, ofGetHeight());
-	ofScale(1, -1, 1);
+	//ofTranslate(0, ofGetHeight());
+	//ofScale(1, -1, 1);
 	cameraFilter.draw();
 }
 

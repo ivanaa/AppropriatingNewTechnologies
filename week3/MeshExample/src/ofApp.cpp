@@ -24,7 +24,7 @@ ofVec3f getVertexFromImg(ofImage& img, int x, int y) {
 void ofApp::setup() {
 	ofSetVerticalSync(true);
 	ofImage img;
-	img.loadImage("linzer.png");
+	img.loadImage("out.png");
 	
 	mesh.setMode(OF_PRIMITIVE_TRIANGLES);
 	int skip = 5;	

@@ -8,7 +8,7 @@ void ofApp::setup() {
 	aperture = .2;
 
 	ofImage img;
-	img.loadImage("linzer.png");
+	img.loadImage("3.png");
 	mesh.setMode(OF_PRIMITIVE_POINTS);
 	for(int y = 0; y < img.getHeight(); y++) {
 		for(int x = 0; x < img.getWidth(); x++) {

@@ -6,12 +6,12 @@ void ofApp::setup() {
 	ofSetVerticalSync(true);
 	mesh.setMode(OF_PRIMITIVE_POINTS);
 
-	xyspacing = 8;
-	zspacing = 8;
-	threshold = 100;
+	xyspacing = 2;
+	zspacing = 2;
+	threshold = 80;
 	
 	ofVideoPlayer body;
-	body.loadMovie("body.gif");
+	body.loadMovie("crni.gif");
 	int n = body.getTotalNumFrames();
 	for(int i = 0; i < n; i++) {
 		// load and save the current frame
@@ -45,13 +45,13 @@ void ofApp::draw() {
 	ofBackground(0);
 	cam.begin();
 	ofTranslate(-width / 2, -height / 2, -depth / 2);
-	if(ofGetMousePressed()) {
-		mesh.draw();
-	} else {
-		for(int i = 0; i < mesh.getNumVertices(); i++) {
-			ofSetColor(mesh.getColor(i));
-			ofBox(mesh.getVertex(i), zspacing);
-		}
-	}
+	        mesh.draw();
+
+	/*	for(int i = 0; i < mesh.getNumVertices(); i++) {
+            ofSetColor(mesh.getColor(i));
+
+			//ofBox(mesh.getVertex(i), zspacing);
+		}*/
+	
 	cam.end();
 }

@@ -11,9 +11,9 @@ void ofApp::setup() {
 	// even animations. use getMesh(0) to get a mesh from assimp. if you have
 	// a bunch of meshes inside your 3d model file, change 0 to something else.
 	ofxAssimpModelLoader loader;
-	loader.loadModel("bun_zipper.ply");
+	loader.loadModel("1.ply");
 	center = loader.getSceneCenter();
-	mesh = loader.getMesh(0);
+	mesh = loader.getMesh(1);
 	
 	// when you scale things to make them bigger or smaller, this also scales
 	// their normals. because the light is calculated using the normal, this

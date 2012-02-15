@@ -28,6 +28,9 @@ void ofApp::update() {
 
 void ofApp::draw() {
 	ofBackground(0);
+    
+    
+  //  kinect.
 	ofSetColor(255, 255, 255);
 	kinect.drawDepth(0, 0, 640, 480);
 	kinect.draw(0, 480, 640, 480);
