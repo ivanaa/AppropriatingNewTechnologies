@@ -74,6 +74,12 @@ void ofApp::draw() {
 	cam.begin();
 	ofSetColor(255, 64); // make everything more transparent
 	float spacing = 5;
+    
+    
+    
+    
+    
+    
 	ofTranslate(-slices[0].getWidth() / 2, -slices[0].getHeight() / 2, -spacing * slices.size() / 2); // center things
 	for(int f = 0; f < slices.size(); f++) {
 		ofPushMatrix();

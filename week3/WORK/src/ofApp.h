@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "ofxKinect.h"
+#include "ofxControlPanel.h"
+
 
 
 class ofApp : public ofBaseApp {
@@ -14,5 +16,15 @@ public:
     
 	ofxKinect kinect;
     ofImage img;
+    
+    
+    ofxControlPanel gui;
+    
+    
+    //void setupControlPanel();
+    
+    
+    ofTrueTypeFont TTF;
+
     
 };

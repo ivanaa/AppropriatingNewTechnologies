@@ -1,7 +1,7 @@
 #include "ofApp.h"
 
 void ofApp::setup() {
-	kinect.init();
+	kinect.init(true, true, true);
 
 	kinect.setRegistration(true);
 	kinect.open();
