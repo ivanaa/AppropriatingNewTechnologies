@@ -5,7 +5,7 @@ int height;
 
 void ofApp::setup() {
     
- //   mesh1.setup();
+    
     
 	ofSetVerticalSync(true);
 		
@@ -16,10 +16,13 @@ void ofApp::setup() {
 	ofEnableAlphaBlending();
     
     mesh1.setup();
+  //  mesh2.setup();
 }
 
 void ofApp::update() {
     mesh1.update();
+  //  mesh2.update();
+
 }
 
 void ofApp::draw() {
@@ -33,7 +36,7 @@ void ofApp::draw() {
 	glEnable(GL_VERTEX_PROGRAM_POINT_SIZE_ARB);	// allows per-point size
     
 	mesh1.draw();
-	
+   // mesh2.draw();
     shader.end();    
 	cam.end();
 }

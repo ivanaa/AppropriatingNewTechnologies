@@ -40,9 +40,7 @@ void ofMeshP::update() {
     img.loadImage(frameResult);
     
     
-    
-    
-    
+
     
     
     mesh.clear();

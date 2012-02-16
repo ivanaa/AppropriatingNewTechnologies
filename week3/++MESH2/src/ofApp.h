@@ -12,6 +12,7 @@ public:
 	
 	ofEasyCam cam;
     ofMeshP mesh1;
+   // ofMeshP mesh2;
 	ofShader shader;
 	float focusDistance, aperture;
 };
