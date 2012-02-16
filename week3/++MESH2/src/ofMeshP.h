@@ -2,17 +2,22 @@
 
 #include "ofMain.h"
 
-class ofApp : public ofBaseApp {
+class ofMeshP {
 public:
+    ofMeshP();
+    
 	void setup();
 	void update();
 	void draw();
-	void keyPressed(int key);
 	
-	ofEasyCam cam;
 	ofMesh mesh;
-	ofShader shader;
-	float focusDistance, aperture;
-    ofImage img;    
+    
+    ofImage img;   
+    int width;
+    int height; 
+    int currentFrame;
+    int previousFrame;
+    string frameResult;
+    int skip;
 
 };

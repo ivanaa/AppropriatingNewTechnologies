@@ -17,6 +17,9 @@ int height;
 
 
 void ofApp::setup() {
+    
+    
+   // ofSetFrameRate(5);
 	ofSetVerticalSync(true);
 		
 	shader.load("DOFCloud");	
@@ -44,8 +47,8 @@ void ofApp::update() {
     }
     
     
-    if(ofGetKeyPressed(' ')) {
-        if(currentFrame < 201){
+   // if(ofGetKeyPressed(' ')) {
+        if(currentFrame < 161){
             currentFrame++;
             
             cout<<"PLAYING"<<endl;
@@ -102,7 +105,7 @@ void ofApp::update() {
             }
         }
         */
-    }
+    
     
     ////////////////////////////////////////////////  //JUSTIN
     
@@ -117,13 +120,13 @@ void ofApp::draw() {
 	ofBackground(0);
 	cam.begin();
 	ofScale(1, -1, 1); // make y point down
-	//shader.begin();
-	//shader.setUniform1f("focusDistance", focusDistance);
-	//shader.setUniform1f("aperture", aperture);
+	shader.begin();
+	shader.setUniform1f("focusDistance", focusDistance);
+	shader.setUniform1f("aperture", aperture);
 	glEnable(GL_POINT_SMOOTH); // makes circular points
 	glEnable(GL_VERTEX_PROGRAM_POINT_SIZE_ARB);	// allows per-point size
 	mesh.draw();
-	//shader.end();
+	shader.end();
     mesh.clear();
 
 	cam.end();

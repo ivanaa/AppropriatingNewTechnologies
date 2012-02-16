@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofMeshP.h"
 
 class ofApp : public ofBaseApp {
 public:
@@ -10,13 +11,7 @@ public:
 	void keyPressed(int key);
 	
 	ofEasyCam cam;
-	ofMesh mesh;
+    ofMeshP mesh1;
 	ofShader shader;
 	float focusDistance, aperture;
-    ofImage img; 
-    
-    ofMeshP mesh1;
-    
-    
-
 };

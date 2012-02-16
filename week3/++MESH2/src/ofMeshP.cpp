@@ -1,32 +1,17 @@
 #include "ofMeshP.h"
 
-
-
-
-//JUSTIN
-int currentFrame = 1;
-int previousFrame = 0;
-string frameResult;
-int skip;	
-int width;
-int height;
-//JUSTIN
-
-
-
-
-
-void ofApp::setup() {
-	ofSetVerticalSync(true);
-		
-
-	ofImage img;
-	img.loadImage("3.png");
+ofMeshP::ofMeshP() {
 	mesh.setMode(OF_PRIMITIVE_POINTS);
-	ofEnableAlphaBlending();
+    currentFrame = 1;
+    previousFrame = 0;    
 }
 
-void ofApp::update() {
+
+void ofMeshP::setup() {
+	img.loadImage("3.png");
+}
+
+void ofMeshP::update() {
     
     ////////////////////////////////////////////////  //JUSTIN
     
@@ -41,66 +26,55 @@ void ofApp::update() {
     }
     
     
-    if(ofGetKeyPressed(' ')) {
-        if(currentFrame < 201){
-            currentFrame++;
-            
-            cout<<"PLAYING"<<endl;
-        }else{
-            currentFrame = 1;
-        }
+    if(currentFrame < 161){
+        currentFrame++;
         
-        ostringstream fileNameToSave;
-        fileNameToSave << currentFrame << ".png";
-        frameResult = fileNameToSave.str(); 
-        img.loadImage(frameResult);
-       	
-        
-        
-        
-        
-        
-        
-        
-        for(int y = 0; y < img.getHeight(); y++) {
-            for(int x = 0; x < img.getWidth(); x++) {
-                ofColor cur = img.getColor(x, y);
-                if(cur.a > 0) {
-                    // the alpha value encodes depth, let's remap it to a good depth range
-                    float z = ofMap(cur.a, 0, 255, -480, 480);
-                    cur.a = 255;
-                    mesh.addColor(cur);
-                    ofVec3f pos(x - img.getWidth() / 2, y - img.getHeight() / 2, z);
-                    mesh.addVertex(pos);
-                    
-                }
+        cout<<"PLAYING"<<endl;
+    }else{
+        currentFrame = 1;
+    }
+    
+    ostringstream fileNameToSave;
+    fileNameToSave << currentFrame << ".png";
+    frameResult = fileNameToSave.str(); 
+    img.loadImage(frameResult);
+    
+    
+    
+    
+    
+    
+    
+    mesh.clear();
+    for(int y = 0; y < img.getHeight(); y++) {
+        for(int x = 0; x < img.getWidth(); x++) {
+            ofColor cur = img.getColor(x, y);
+            if(cur.a > 0) {
+                // the alpha value encodes depth, let's remap it to a good depth range
+                float z = ofMap(cur.a, 0, 255, -480, 480);
+                cur.a = 255;
+                mesh.addColor(cur);
+                ofVec3f pos(x - img.getWidth() / 2, y - img.getHeight() / 2, z);
+                mesh.addVertex(pos);
+                
             }
         }
-        
-
-
-
     }
+    
+    
+    
+    
+    
     
     ////////////////////////////////////////////////  //JUSTIN
     
-
+    
     
     
     
 	
 }
 
-void ofApp::draw() {
-	ofBackground(0);
-//	cam.begin();
-	ofScale(1, -1, 1); // make y point down
+void ofMeshP::draw() {
 	mesh.draw();
-    mesh.clear();
-
-	//cam.end();
-}
-
-void ofApp::keyPressed(int key) {
-
 }
