@@ -16,7 +16,7 @@ void ofMeshP::update(string hill, int max) {
     
     ////////////////////////////////////////////////  //JUSTIN
      path = hill;
-    l = max;
+     l = max;
     
     //if space bar is pressed, increment playback number
     
@@ -43,11 +43,7 @@ void ofMeshP::update(string hill, int max) {
     
     img.loadImage(path+ frameResult);
       
-    
-    
-
-    
-    
+  
     mesh.clear();
     for(int y = 0; y < img.getHeight(); y++) {
         for(int x = 0; x < img.getWidth(); x++) {
@@ -63,15 +59,7 @@ void ofMeshP::update(string hill, int max) {
             }
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
 	
