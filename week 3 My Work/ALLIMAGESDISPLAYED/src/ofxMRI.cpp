@@ -40,9 +40,9 @@ void ofxMRI::setup(string filename) {
 void ofxMRI::update() {
 }
 
-void ofxMRI::draw() {
+void ofxMRI::draw(int s) {
     
-	float spacing = 8;
+	float spacing =s;// 8;
     
     
 	ofTranslate(-slices[0].getWidth() / 2, -slices[0].getHeight() / 2, -spacing * slices.size() / 2); // center things
@@ -55,7 +55,7 @@ void ofxMRI::draw() {
 		// jiggle things
 		float noiseOffset = ofGetElapsedTimef() + i;
 		float noiseScale = 10;
-		//ofTranslate(ofSignedNoise(noiseOffset, 0) * noiseScale, ofSignedNoise(0, noiseOffset) * noiseScale, 0);
+		ofTranslate(0, 0, ofSignedNoise(0, noiseOffset) * noiseScale);
 		
 		slices[i].draw(0, 0);
 		ofPopMatrix();

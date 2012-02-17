@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofMeshP.h"
+#include "ofxMRI.h"
 
 class ofApp : public ofBaseApp {
 public:
@@ -16,4 +17,8 @@ public:
     ofMeshP mesh3;
 	ofShader shader;
 	float focusDistance, aperture;
+	//ofEasyCam cam;
+	ofxMRI body, melon;
+
+
 };

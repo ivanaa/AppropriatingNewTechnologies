@@ -26,6 +26,7 @@
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
 		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		F6C64E7714EDE9F000DC0A7C /* ofxMRI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6C64E7514EDE9F000DC0A7C /* ofxMRI.cpp */; };
 		F6ED5C9C14EC4F7000B8BA62 /* ofMeshP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6ED5C9A14EC4F7000B8BA62 /* ofMeshP.cpp */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,8 @@
 		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		F6C64E7514EDE9F000DC0A7C /* ofxMRI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxMRI.cpp; path = ../../ALLIMAGESDISPLAYED/src/ofxMRI.cpp; sourceTree = "<group>"; };
+		F6C64E7614EDE9F000DC0A7C /* ofxMRI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxMRI.h; path = ../../ALLIMAGESDISPLAYED/src/ofxMRI.h; sourceTree = "<group>"; };
 		F6ED5C9A14EC4F7000B8BA62 /* ofMeshP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofMeshP.cpp; sourceTree = "<group>"; };
 		F6ED5C9B14EC4F7000B8BA62 /* ofMeshP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofMeshP.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +180,8 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F6C64E7514EDE9F000DC0A7C /* ofxMRI.cpp */,
+				F6C64E7614EDE9F000DC0A7C /* ofxMRI.h */,
 				F6ED5C9A14EC4F7000B8BA62 /* ofMeshP.cpp */,
 				F6ED5C9B14EC4F7000B8BA62 /* ofMeshP.h */,
 				27EEF94E14E4D276000F2B66 /* DOFCloud.frag */,
@@ -288,6 +293,7 @@
 				27EEF95014E4D276000F2B66 /* DOFCloud.frag in Sources */,
 				27EEF95114E4D276000F2B66 /* DOFCloud.vert in Sources */,
 				F6ED5C9C14EC4F7000B8BA62 /* ofMeshP.cpp in Sources */,
+				F6C64E7714EDE9F000DC0A7C /* ofxMRI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

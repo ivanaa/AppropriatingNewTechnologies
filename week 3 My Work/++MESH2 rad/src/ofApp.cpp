@@ -4,16 +4,20 @@ int width;
 int height;
 
 void ofApp::setup() {
-    
+    ofEnableAlphaBlending();
     
     
 	ofSetVerticalSync(true);
+    
+   // body.setup("8.gif");
+    melon.setup("7.gif");
+	
 		
 	shader.load("DOFCloud");	
 	focusDistance = 500;
 	aperture = .2;
 
-	ofEnableAlphaBlending();
+	//ofEnableAlphaBlending();
     
     mesh1.setup();
     mesh2.setup();
@@ -32,7 +36,7 @@ void ofApp::draw() {
 	ofBackground(0);
 	cam.begin();
 	ofScale(1, -1, 1); // make y point down
-//	shader.begin();
+ //   shader.begin();
 //	shader.setUniform1f("focusDistance", focusDistance);
 //	shader.setUniform1f("aperture", aperture);
 	glEnable(GL_POINT_SMOOTH); // makes circular points
@@ -52,11 +56,29 @@ void ofApp::draw() {
     ofRotateY(90);
     mesh3.draw();
     ofPopMatrix();
- 
+ 	ofBackground(0);
+    
+  //  shader.end(); 
+    
+	//cam.begin();
+	ofSetColor(255, 127); // make everything more transparent
+    
+    //  body.draw(0,0,0);
+  //  body.draw(3);
+  //  ofPushMatrix();
+    // ofTranslate();
+    
+    ofPushMatrix();
+    ofScale(2, 2);
+   melon.draw(3);
+	ofPopMatrix();
+
     
     
     
-    //  shader.end(); 
+    
+    
+    
     
     cam.end();
 }
