@@ -12,7 +12,7 @@ public:
 	void draw();
 	void keyPressed(int key);
 	
-	ofEasyCam cam;
+	//ofEasyCam cam;
     ofMeshP mesh1;
     ofMeshP mesh2;
     ofMeshP mesh3;
@@ -23,7 +23,6 @@ public:
     
     ofxGameCamera camera;
 	
-    vector<ofNode> nodes;
     
     
 };
